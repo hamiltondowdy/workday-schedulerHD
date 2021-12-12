@@ -1,11 +1,8 @@
 var currentDate = document.querySelector("#currentDay");
-var workDay = document.querySelector("#container");
+var workDay = document.querySelector("#time-block");
 
 currentDate = moment();
 displayCurrentDate(currentDate);
-
-workDay = container();
-displayWorkDay(workDay);
 
 
 function displayCurrentDate(currentDate) {
@@ -13,6 +10,4 @@ function displayCurrentDate(currentDate) {
     .textContent=currentDate.format("MM/DD/YYYY");
 }
 
-function displayWorkDay(workDay) {
-    document.getElementById("container").appendChild(workDay);
-}
+
