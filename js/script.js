@@ -8,7 +8,6 @@ $(document).ready(function() {
 const rows = document.getElementById("row");
 let currentHour = parseInt(moment().format('H'));
 
-console.log(currentHour);
 
 Array.from(rows).forEach(row => {
     let
@@ -20,11 +19,11 @@ Array.from(rows).forEach(row => {
     if (rowHour) {
       // Compares row id to current hour and sets color accordingly
       if (currentHour === rowHour) {
-        setColor(row, "red");
-      } else if ((currentHour < rowHour)){
-        setColor(row, "green");
+        $(this).addClass("present");
+      } else if ((currentHour > rowHour)){
+        $(this).addClass("future");
       } else {
-        setColor(row, "lightgrey");
+        $(this).addClass("past");
       }
     }
   });
